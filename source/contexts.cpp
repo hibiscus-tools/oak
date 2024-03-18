@@ -4,12 +4,12 @@
 
 #include "contexts.hpp"
 
-DeviceResourceContext DeviceResourceContext::from(const vk::PhysicalDevice &phdev, const std::vector <const char *> &extensions, const vk::PhysicalDeviceFeatures2KHR &features)
+DeviceResourceContext DeviceResourceContext::from(const vk::PhysicalDevice &phdev, const vk::Extent2D &extent, const std::vector <const char *> &extensions, const vk::PhysicalDeviceFeatures2KHR &features)
 {
 	DeviceResourceContext drc;
 
 	// TODO: option for headless, null swapchain etc
-	drc.skeletonize(phdev, { 1920, 1080 }, "IVY", extensions, features);
+	drc.skeletonize(phdev, extent, "IVY", extensions, features);
 
 	drc.phdev = phdev;
 	drc.memory_properties = phdev.getMemoryProperties();

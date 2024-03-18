@@ -21,7 +21,7 @@ struct DeviceResourceContext : littlevk::Skeleton {
 	void present_frame(const littlevk::SurfaceOperation &, size_t);
 	bool valid_window() const;
 
-	static DeviceResourceContext from(const vk::PhysicalDevice &, const std::vector <const char *> &, const vk::PhysicalDeviceFeatures2KHR &);
+	static DeviceResourceContext from(const vk::PhysicalDevice &, const vk::Extent2D &, const std::vector <const char *> &, const vk::PhysicalDeviceFeatures2KHR &);
 };
 
 // For one render pass

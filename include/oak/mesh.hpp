@@ -13,6 +13,9 @@ struct Mesh {
 
 	// Topology
 	std::vector <glm::uvec3> triangles;
+
+	// Dedulicating vertices
+	Mesh deduplicate() const;
 };
 
 // TODO: (template) flags to choose attributes?
